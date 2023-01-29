@@ -93,27 +93,7 @@ istio는 마이크로서비스 간의 **모든 네트워크 통신을 담당 할
 - control plane : 트래픽 경로를 설정하고 관리하는 용도로 사용. Mixer의 정책을 설정하고 텔레메트리를 수집하는 용도로 사용.
 
 ### 주요 구성 요소
-Envoy
-lyft사에서 개발한 C++로 개발된 고성능 프록시. 이스티오에서는 엔보이의 확장판을 사용.
-
-- 동적 서비스 디스커버리
-- 로드밸런싱
-- TLS 인증서 처리
-- HTTP/2, gRPC 프록시
-- 서킷브레이커
-- 헬스체크
-- 트래픽을 스테이지 단계별로 나눠서 보내는 기능(Staged rollouts with %-based traffic split)
-- 실패 삽입
-- 풍부한 메트릭
-
-쿠버네티스 pod에 사이드카 형태로 추가되어서 배포됩니다. 
-배포되고 나면 믹서(mixer)에서 활용가능한 다양한 통계 정보를 제공해 줍니다.
-사이드카 형태이기 때문에 기존 컨테이너나 **코드를 재작성할 필요없이 그대로 이용**할 수 있습니다.
-
-
-envoy출처
-https://krksap.tistory.com/1608 
-
+**Envoy**
 
 ###### 데이타 플레인
 실제 데이터 트래픽이 돌아다니는 영역이며,
@@ -137,9 +117,27 @@ Istio에 유용한 기능중의 하나가 트래픽의 경로를 컨트롤 하�
 
 또한 서비스의 응답 시간이나 평균 처리량과 같은 다양한 지표를 수집하여 저장하는 역할을 한다. 
 
-###### # 시타델(Citadel)
+###### 시타델(Citadel)
 시타델은 보안에 관련된 기능을 담당하는 모듈이다. 서비스를 사용하기 위한 사용자 인증 (Authentication)과 인가 (Authorization)을 담당한다. 또한 Istio는 통신을 TLS(SSL)을 이용하여 암호화할 수 있는데, TLS 암호화나 또는 사용자 인증에 필요한 인증서(Certification)을 관리하는 역할을 한다.  
 
+---------
+#### Envoy Proxy
+lyft사에서 개발한 C++로 개발된 고성능 프록시. 이스티오에서는 엔보이의 확장판을 사용.
+기존 프록시 L4기능 뿐 아니라 L7 기능도 지원하면서 HTTP 뿐아니라 HTTP 2.0,TCP,gRPC까지 다양한 프로토콜을 지원한다. 
+
+- 동적 서비스 디스커버리
+- 로드밸런싱
+- TLS 인증서 처리
+- HTTP/2, gRPC 프록시
+- 서킷브레이커
+- 헬스체크
+- 트래픽을 스테이지 단계별로 나눠서 보내는 기능(Staged rollouts with %-based traffic split)
+- 실패 삽입
+- 풍부한 메트릭
+
+쿠버네티스 pod에 사이드카 형태로 추가되어서 배포됩니다. 
+배포되고 나면 믹서(mixer)에서 활용가능한 다양한 통계 정보를 제공해 줍니다.
+사이드카 형태이기 때문에 기존 컨테이너나 **코드를 재작성할 필요없이 그대로 이용**할 수 있습니다.
 
 
 
@@ -152,7 +150,7 @@ https://medium.com/dtevangelist/service-mesh-%EB%9E%80-8dfafb56fc07
 istio란 무엇인가?
 https://arisu1000.tistory.com/27865
 Envoy Proxy 소개
-https://arisu1000.tistory.com/27864
+https://sphong0417.tistory.com/8
 istio와 envoy란
 https://blog.naver.com/PostView.nhn?blogId=sharplee7&logNo=222157988958
 
