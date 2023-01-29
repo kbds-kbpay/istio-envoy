@@ -1,4 +1,17 @@
 #istio/envoy 정리
+------------
+## 목차
+
+1. Gartner의 MSA에 대한 Service구분
+
+2. Service Mesh란
+
+3. ISTIO
+
+4. ENVOY
+----------
+
+
 
 #### Gartner의 MSA에 대한 Service구분
 
@@ -45,8 +58,6 @@ Control Plane : 프록시들에 설정값을 전달하고 관리하는 컨트롤
 ### service mesh
 - Service Mesh는, 어플리케이션 코드의 변경 없이 가시성과 트래픽 관리 그리고 보안을 담당해줄 전담 인프라스트럭쳐 계층이라고 함.
 - A service mesh is a dedicated infrastructure layer that you can add to your applications. It allows you to transparently add capabilities like observability, traffic management, and security, without adding them to your own code.
-
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbvdXJ4%2FbtqvVDO3zmN%2F7oUfEbB77YYSu9ramwdJWK%2Fimg.png)
 
 API Gateway가 마이크로서비스 외부 클라이언트들이 외부에서 접속 할 수 있도록 하는 것과 달리 서비스매쉬는 마이크로서비스 내부에서 마이크로서비스 간의 서비스 Discovery(식별), Routing(경로), Load Balancing(부하분산), 인증/인가, 보안 등의 역할을 담당합니다.
 
