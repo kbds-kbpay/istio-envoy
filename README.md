@@ -1,14 +1,6 @@
 # istio-envoy
 istio/envoy 용어정리
 
-Istio를 사용하기 전에
-여 규칙이나 환경이 변경되면 업데이트합니다.
-
-Istio를 사용하기 전에
-Istio를 사용하기 전에
-
-
-
 
 출처 : https://www.linkedin.com/pulse/istio%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B4%EA%B3%A0-%EC%99%9C-%EC%A4%91%EC%9A%94%ED%95%A0%EA%B9%8C-sean-lee/?originalSubdomain=kr
 
