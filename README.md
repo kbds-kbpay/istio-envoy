@@ -50,13 +50,10 @@ MicroService Architecture를 도입하면서 발생한 **런타임 복잡성 이
 다양한 기능을 수행하려면 기존 TCP기반의 proxy로는 한계가 있습니다.
 그래서 Service Mesh에서의 통신은 사이드카로 배치된 경량화되고 L7계층기반의 proxy를 사용하게 됩니다.
 
-##### Data Plane : 프록시들로 이루어져 트래픽을 설정값에 따라 컨트롤
-##### Control Plane : 프록시들에 설정값을 전달하고 관리하는 컨트롤러 역할
-![](https://user-images.githubusercontent.com/49928041/215318714-a5c35210-890d-4db1-bbd9-7b822abd1d91.png)
-
 ------------
 
-Envoy를 이용해서 서비스 매쉬를 구현하기 위해서는 Envoy로 구성된 데이타 플레인을 컨트롤할 솔루션이 필요하다. Envoy를 데이타 플레인으로 사용하고 이를 컨트롤 해주는 오픈 소스 솔루션이 Istio 이다. (http://istio.io)
+### Envoy를 이용해서 서비스 매쉬를 구현하기 위해서는
+Envoy로 구성된 데이타 플레인을 컨트롤할 솔루션이 필요하다. Envoy를 데이타 플레인으로 사용하고 이를 컨트롤 해주는 오픈 소스 솔루션이 Istio 이다. (http://istio.io)
 
 
 ### Istio
