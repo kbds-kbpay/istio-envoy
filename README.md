@@ -53,8 +53,8 @@ MicroService Architecture를 도입하면서 발생한 **런타임 복잡성 이
 ------------
 
 ### Envoy를 이용해서 서비스 매쉬를 구현하기 위해서는
-Envoy로 구성된 데이타 플레인을 컨트롤할 솔루션이 필요하다. Envoy를 데이타 플레인으로 사용하고 이를 컨트롤 해주는 오픈 소스 솔루션이 Istio 이다. (http://istio.io)
-
+Envoy로 구성된 데이타 플레인을 컨트롤할 솔루션이 필요하다. 
+Envoy를 데이타 플레인으로 사용하고 이를 컨트롤 해주는 오픈 소스 솔루션이 **Istio** 이다. 
 
 ### Istio
 [istio 소개글 Links](https://istio.io)
@@ -62,12 +62,10 @@ Envoy로 구성된 데이타 플레인을 컨트롤할 솔루션이 필요하다
 istio는 마이크로서비스 간의 **모든 네트워크 통신을 담당 할 수 있는 프록시인 Envoy**를 사이드카 패턴으로 마이크로 서비스들에 배포한 다음,
 프록시들의 설정 값 저장 및 관리/감독을 수행하고, 프록시들에 설정값을 전달하는 **컨트롤러 역할**을 수행합니다.
 
-제어 : istio
-
 -  kubernetes를 기본으로 지원
 -  Control Plane — Data Plane 구조로 동작
 -  Envoy를 기본 Proxy로 사용
-​
+
 - Istio는 분산 어플리케이션에 추가될 수 있는 오픈소스 Service Mesh입니다.
 - Istio is an open source service mesh that layers transparently onto existing distributed applications.
 - istio는 Serive Mesh를 구성하는 방식의 하나로 Side Car 역할을 하는 Proxy(envoy)와 이를 제어하는 Control Plane(istio)으로 구성 됨
