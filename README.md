@@ -154,9 +154,8 @@ Istio에 유용한 기능중의 하나가 트래픽의 경로를 컨트롤 하�
 
 ##### 4. 갤리(Galley) 
 Istio의 구성 및 설정 검증. 배포 관리 수행
-----------
 
-
+------
 ## 4. Envoy란
 #### lyft사에서 개발한 C++로 개발된 고성능 프록시. 이스티오에서는 엔보이의 확장판을 사용.
 기존 프록시 L4기능 뿐 아니라 L7 기능도 지원하면서 HTTP 뿐아니라 HTTP 2.0,TCP,gRPC까지 다양한 프로토콜을 지원한다. 
@@ -195,15 +194,18 @@ MSA(Micro Service Architecture)에서는 서비스를 마이크로하게 잘게 
 출처
 
 Service Mesh 란?
+
 https://medium.com/dtevangelist/service-mesh-%EB%9E%80-8dfafb56fc07
 
 istio란 무엇인가?
+
 https://arisu1000.tistory.com/27865
 
 https://twofootdog.tistory.com/78
 
 
 Envoy Proxy 소개
+
 https://krksap.tistory.com/1608
 
 https://sphong0417.tistory.com/8
