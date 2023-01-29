@@ -17,6 +17,8 @@
 
 - [그림 1] Microservices Architecture Components @ 2018 Gartner, Inc.
 ![](https://user-images.githubusercontent.com/49928041/215317658-f2d86854-e802-4e46-8e11-432804940fb2.png)
+
+#### Service Mesh :
 - Service Mesh파트는 Micro화된 서비스간의 연결을 위해서 각 서비스에 대한 Configuration을 통합해 관리 하고 서비스를 찾아 갈수 있도록 Discovery 기능 및 서비스에 대한 분배 라우팅 역할을 해야 합니다. 
 - MSA에서 Service Mesh 구성은 서비스의 연속성 및 확장성을 위해서 중요한 포인트 중에 하나입니다.
 
@@ -32,23 +34,15 @@
 3. Mesh-Agnostic Code 방식: 플랫폼에서 관리자가 임의로 설정(사이드카 인젝션으로 제어)  **istio/envoy**
 
 
+#### 다양한 기능 수행을 위한 L7 프록시 사용이 필요
 다양한 기능을 수행하려면 기존 TCP기반의 proxy로는 한계가 있습니다.
 그래서 Service Mesh에서의 통신은 사이드카로 배치된 경량화되고 L7계층기반의 proxy를 사용하게 됩니다.
 
-Data Plane : 프록시들로 이루어져 트래픽을 설정값에 따라 컨트롤
-Control Plane : 프록시들에 설정값을 전달하고 관리하는 컨트롤러 역할
+##### Data Plane : 프록시들로 이루어져 트래픽을 설정값에 따라 컨트롤
+##### Control Plane : 프록시들에 설정값을 전달하고 관리하는 컨트롤러 역할
 ![](https://user-images.githubusercontent.com/49928041/215318714-a5c35210-890d-4db1-bbd9-7b822abd1d91.png)
 
 ------------
-
-
-
-
-
-
-
-
-
 
 ### Istio
 [Links](https://istio.io)
