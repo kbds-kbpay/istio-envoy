@@ -149,6 +149,5 @@ Istio에 유용한 기능중의 하나가 트래픽의 경로를 컨트롤 하�
 출처
 https://medium.com/dtevangelist/service-mesh-%EB%9E%80-8dfafb56fc07
 https://arisu1000.tistory.com/27865
+https://arisu1000.tistory.com/27864
 
-
-Mixer의 정책을 설정하고 텔레메트리를 수집하는 용도로 사용.
