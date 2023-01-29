@@ -232,6 +232,7 @@ https://twofootdog.tistory.com/78
 
 
 Envoy Proxy 소개
+https://krksap.tistory.com/1608
 https://sphong0417.tistory.com/8
 istio와 envoy란
 https://blog.naver.com/PostView.nhn?blogId=sharplee7&logNo=222157988958
