@@ -1,5 +1,6 @@
 # istio-envoy
 istio/envoy 용어정리
+출처 : https://www.linkedin.com/pulse/istio%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B4%EA%B3%A0-%EC%99%9C-%EC%A4%91%EC%9A%94%ED%95%A0%EA%B9%8C-sean-lee/?originalSubdomain=kr
 
 Istio 공식 홈페이지(https://istio.io)에 따르면,
 Istio는 분산 어플리케이션에 추가될 수 있는 오픈소스 Service Mesh 입니다.
