@@ -7,6 +7,8 @@ istio/envoy 용어정리
 Istio 공식 홈페이지(https://istio.io)에 따르면,
 Istio는 분산 어플리케이션에 추가될 수 있는 오픈소스 Service Mesh 입니다.
 
+https://user-images.githubusercontent.com/15958325/71668021-b99d3780-2daa-11ea-86e4-a57d4c3a1638.png
+
 Istio is an open source service mesh that layers transparently onto existing distributed applications.
 
 service mesh(서비스 메쉬)란?
