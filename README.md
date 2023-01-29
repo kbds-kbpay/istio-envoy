@@ -19,11 +19,23 @@
 ![](https://user-images.githubusercontent.com/49928041/215317658-f2d86854-e802-4e46-8e11-432804940fb2.png)
 
 #### Service Mesh :
-- Service Mesh파트는 Micro화된 서비스간의 연결을 위해서 각 서비스에 대한 Configuration을 통합해 관리 하고 서비스를 찾아 갈수 있도록 Discovery 기능 및 서비스에 대한 분배 라우팅 역할을 해야 합니다. 
-- MSA에서 Service Mesh 구성은 서비스의 연속성 및 확장성을 위해서 중요한 포인트 중에 하나입니다.
+- Service Mesh는 마이크로서비스 간 통신을 위해 각 서비스를 식별(Discovery)하고, 경로를 파악(Routing)하며, 로드 발란싱(Load Balancing)을 하고 전체 서비스의 장애 전파를 차단(Circuit Break)하며 Telemetry와 통합되어 로깅, 모니터링, 트래이싱 기능을 담당하는 계층
+**- MSA에서 Service Mesh 구성은 서비스의 연속성 및 확장성을 위해서 중요한 포인트 중에 하나입니다.**
 
 -[그림 2] Service Mesh에서의 호출은 서비스에 딸린 proxy끼리 이뤄지게 됩니다.
 ![](https://user-images.githubusercontent.com/49928041/215318416-d9c5b7cf-3af8-47d3-9480-d205dec3d783.png)
+
+
+#### Service Mesh 장단점
+###### 장점
+기능을 어플리케이션 외부에 구현하며 **재사용** 가능하다.
+MicroService Architecture를 도입하면서 발생한 **런타임 복잡성 이슈를 해결**한다.
+어플리케이션 개발시 언어와 미들웨어 등에 **종속성을 제거**한다.
+###### 단점
+시스템의 런타임 인스턴스 수가 크게 증가한다. (최소 2배수)
+서비스 간 통신에 네트워크 레이어가 추가된다.
+신기술이다. 구현체가 Release 될 때까지 시간이 필요하다.
+
 
 #### 서비스 타입에 따라, 
 
@@ -44,16 +56,23 @@
 
 ------------
 
+Envoy를 이용해서 서비스 매쉬를 구현하기 위해서는 Envoy로 구성된 데이타 플레인을 컨트롤할 솔루션이 필요하다. Envoy를 데이타 플레인으로 사용하고 이를 컨트롤 해주는 오픈 소스 솔루션이 Istio 이다. (http://istio.io)
+
+
 ### Istio
-[Links](https://istio.io)
+[istio 소개글 Links](https://istio.io)
+- istio는 IBM, Redhat, VMware, Google등이 참여해 개발한  Service Mesh(서비스 매쉬) 구현을 위한 오픈소스 솔루션입니다. istio는 마이크로서비스 간의 모든 네트워크 통신을 담당 할 수 있는 프록시인 Envoy를 사이드카 패턴으로 마이크로 서비스들에 배포한 다음, 프록시들의 설정 값 저장 및 관리/감독을 수행하고, 프록시들에 설정값을 전달하는 **컨트롤러 역할**을 수행합니다.
+-  kubernetes를 기본으로 지원
+-  Control Plane — Data Plane 구조로 동작
+-  Envoy를 기본 Proxy로 사용
+​
 - Istio는 분산 어플리케이션에 추가될 수 있는 오픈소스 Service Mesh입니다.
 - Istio is an open source service mesh that layers transparently onto existing distributed applications.
+- istio는 Serive Mesh를 구성하는 방식의 하나로 Side Car 역할을 하는 Proxy(envoy)와 이를 제어하는 Control Plane(istio)으로 구성 됨
 
-### service mesh
-- Service Mesh는, 어플리케이션 코드의 변경 없이 가시성과 트래픽 관리 그리고 보안을 담당해줄 전담 인프라스트럭쳐 계층이라고 함.
-- A service mesh is a dedicated infrastructure layer that you can add to your applications. It allows you to transparently add capabilities like observability, traffic management, and security, without adding them to your own code.
 
-API Gateway가 마이크로서비스 외부 클라이언트들이 외부에서 접속 할 수 있도록 하는 것과 달리 서비스매쉬는 마이크로서비스 내부에서 마이크로서비스 간의 서비스 Discovery(식별), Routing(경로), Load Balancing(부하분산), 인증/인가, 보안 등의 역할을 담당합니다.
+
+
 
 
 
