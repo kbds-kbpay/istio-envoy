@@ -1,23 +1,182 @@
-# istio-envoy
+###Gartner의 MSA에 대한 Service구분
+- [그림 1] Microservices Architecture Components @ 2018 Gartner, Inc.
+![](https://user-images.githubusercontent.com/49928041/215317658-f2d86854-e802-4e46-8e11-432804940fb2.png)
+- Service Mesh파트는 Micro화된 서비스간의 연결을 위해서 각 서비스에 대한 Configuration을 통합해 관리 하고 서비스를 찾아 갈수 있도록 Discovery 기능 및 서비스에 대한 분배 라우팅 역할을 해야 합니다. 
+- MSA에서 Service Mesh 구성은 서비스의 연속성 및 확장성을 위해서 중요한 포인트 중에 하나입니다.
 
-## 목차
+-[그림 2] Service Mesh에서의 호출은 서비스에 딸린 proxy끼리 이뤄지게 됩니다.
+![](https://user-images.githubusercontent.com/49928041/215318416-d9c5b7cf-3af8-47d3-9480-d205dec3d783.png)
 
-1. [마이크로 서비스 아키텍쳐의 단점]
+#### 서비스 타입에 따라, 
 
-2. [Service Mesh 란]
+1.  Mesh-Native Code 방식: 플랫폼 제공 벤더에서 제공해주는 서비스 매쉬 타입(벤더에서 제어)   Azure Service Fabric
 
-3. [Why? Service Mesh]
+2. Mesh-Aware Code 방식: 프로그램 코드 기반 서비스 매쉬 타입(개발자가 직접 제어) Spring Cloud Neflix Eureka
 
-4. [Service Mesh 4가지 요소]
-
-5. [Service Mesh : 가시성]
-
-
-5. [Service Mesh : 트래픽]
-
-5. [Service Mesh : 보안]
-
-5. [Service Mesh : 계층]
+3. Mesh-Agnostic Code 방식: 플랫폼에서 관리자가 임의로 설정(사이드카 인젝션으로 제어)  **istio/envoy**
 
 
-## 1. 마이크로 서비스 아키텍쳐의 단점
+다양한 기능을 수행하려면 기존 TCP기반의 proxy로는 한계가 있습니다.
+그래서 Service Mesh에서의 통신은 사이드카로 배치된 경량화되고 L7계층기반의 proxy를 사용하게 됩니다.
+
+Data Plane : 프록시들로 이루어져 트래픽을 설정값에 따라 컨트롤
+Control Plane : 프록시들에 설정값을 전달하고 관리하는 컨트롤러 역할
+![](https://user-images.githubusercontent.com/49928041/215318714-a5c35210-890d-4db1-bbd9-7b822abd1d91.png)
+
+------------
+
+
+
+
+
+
+
+
+
+
+### Istio
+[Links](https://istio.io)
+- Istio는 분산 어플리케이션에 추가될 수 있는 오픈소스 Service Mesh입니다.
+- Istio is an open source service mesh that layers transparently onto existing distributed applications.
+
+### service mesh
+- Service Mesh는, 어플리케이션 코드의 변경 없이 가시성과 트래픽 관리 그리고 보안을 담당해줄 전담 인프라스트럭쳐 계층이라고 함.
+- A service mesh is a dedicated infrastructure layer that you can add to your applications. It allows you to transparently add capabilities like observability, traffic management, and security, without adding them to your own code.
+
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbvdXJ4%2FbtqvVDO3zmN%2F7oUfEbB77YYSu9ramwdJWK%2Fimg.png)
+
+API Gateway가 마이크로서비스 외부 클라이언트들이 외부에서 접속 할 수 있도록 하는 것과 달리 서비스매쉬는 마이크로서비스 내부에서 마이크로서비스 간의 서비스 Discovery(식별), Routing(경로), Load Balancing(부하분산), 인증/인가, 보안 등의 역할을 담당합니다.
+
+
+
+
+
+
+**Table of Contents**
+
+[TOCM]
+
+[TOC]
+
+#H1 header
+##H2 header
+###H3 header
+####H4 header
+#####H5 header
+######H6 header
+#Heading 1 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+##Heading 2 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+###Heading 3 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+####Heading 4 link [Heading link](https://github.com/pandao/editor.md "Heading link") Heading link [Heading link](https://github.com/pandao/editor.md "Heading link")
+#####Heading 5 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+######Heading 6 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+
+##Headers (Underline)
+
+H1 Header (Underline)
+=============
+
+H2 Header (Underline)
+-------------
+
+###Characters
+                
+----
+
+###Lists
+
+####Unordered list (-)
+
+- Item A
+- Item B
+- Item C
+     
+####Unordered list (*)
+
+* Item A
+* Item B
+* Item C
+
+####Unordered list (plus sign and nested)
+                
++ Item A
++ Item B
+    + Item B 1
+    + Item B 2
+    + Item B 3
++ Item C
+    * Item C 1
+    * Item C 2
+    * Item C 3
+
+####Ordered list
+                
+1. Item A
+2. Item B
+3. Item C
+                
+----
+                    
+###Tables
+                    
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell 
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+| Function name | Description                    |
+| ------------- | ------------------------------ |
+| `help()`      | Display the help window.       |
+| `destroy()`   | **Destroy your computer!**     |
+
+| Item      | Value |
+| --------- | -----:|
+| Computer  | $1600 |
+| Phone     |   $12 |
+| Pipe      |    $1 |
+
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -----:|
+| col 3 is      | some wordy text | $1600 |
+| col 2 is      | centered        |   $12 |
+| zebra stripes | are neat        |    $1 |
+                
+----
+
+####HTML entities
+
+&copy; &  &uml; &trade; &iexcl; &pound;
+&amp; &lt; &gt; &yen; &euro; &reg; &plusmn; &para; &sect; &brvbar; &macr; &laquo; &middot; 
+
+X&sup2; Y&sup3; &frac34; &frac14;  &times;  &divide;   &raquo;
+
+18&ordm;C  &quot;  &apos;
+
+##Escaping for Special Characters
+
+\*literal asterisks\*
+
+##Markdown extras
+
+###GFM task list
+
+- [x] GFM task list 1
+- [x] GFM task list 2
+- [ ] GFM task list 3
+    - [ ] GFM task list 3-1
+    - [ ] GFM task list 3-2
+    - [ ] GFM task list 3-3
+- [ ] GFM task list 4
+    - [ ] GFM task list 4-1
+    - [ ] GFM task list 4-2
+
+            
+###TeX(LaTeX)
+
+
+###End
