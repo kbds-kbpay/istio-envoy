@@ -147,11 +147,12 @@ Istio에 유용한 기능중의 하나가 트래픽의 경로를 컨트롤 하�
 
 
 출처
+Service Mesh 란?
 https://medium.com/dtevangelist/service-mesh-%EB%9E%80-8dfafb56fc07
-
+istio란 무엇인가?
 https://arisu1000.tistory.com/27865
-
+Envoy Proxy 소개
 https://arisu1000.tistory.com/27864
-
+istio와 envoy란
 https://blog.naver.com/PostView.nhn?blogId=sharplee7&logNo=222157988958
 
