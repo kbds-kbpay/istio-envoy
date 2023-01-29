@@ -1,2 +1,2 @@
 # istio-envoy
-istio&amp;envoy 용어정리
+istio/envoy 용어정리
