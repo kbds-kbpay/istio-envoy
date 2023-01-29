@@ -193,17 +193,23 @@ MSA(Micro Service Architecture)에서는 서비스를 마이크로하게 잘게 
 
 
 출처
+
 Service Mesh 란?
 https://medium.com/dtevangelist/service-mesh-%EB%9E%80-8dfafb56fc07
+
 istio란 무엇인가?
 https://arisu1000.tistory.com/27865
+
 https://twofootdog.tistory.com/78
 
 
 Envoy Proxy 소개
 https://krksap.tistory.com/1608
+
 https://sphong0417.tistory.com/8
+
 istio와 envoy란
+
 https://blog.naver.com/PostView.nhn?blogId=sharplee7&logNo=222157988958
 
 
